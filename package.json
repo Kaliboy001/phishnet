@@ -1,0 +1,50 @@
+{
+  "name": "phishnet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "npx tsc",
+    "dev": "nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammedhabeebkv/phishnet.git"
+  },
+  "author": "muhammedhabeebkv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammedhabeebkv/phishnet/issues"
+  },
+  "homepage": "https://github.com/muhammedhabeebkv/phishnet#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.1",
+    "express-handlebars": "^8.0.1",
+    "express-useragent": "^1.0.15",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "node-telegram-bot-api": "^0.66.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.21",
+    "@types/express-fileupload": "^1.5.1",
+    "@types/express-handlebars": "^5.3.1",
+    "@types/express-useragent": "^1.0.5",
+    "@types/hbs": "^4.0.4",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.5.4",
+    "@types/node-telegram-bot-api": "^0.64.7",
+    "@types/uuid": "^10.0.0",
+    "nodemon": "^3.1.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}

